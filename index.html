@@ -574,9 +574,9 @@
             </g>
           </svg>
           <div class="bouquet-caption" aria-live="polite">
-            <span class="bouquet-index" id="bouquet-index">BÓ HOA 01 / 03</span>
-            <span class="bouquet-name" id="bouquet-name">Hồng phấn</span>
-            <span class="bouquet-hint">chạm để đổi · tự chuyển sau vài giây</span>
+            <span class="bouquet-index" id="bouquet-index"></span>
+            <span class="bouquet-name" id="bouquet-name"></span>
+            <span class="bouquet-hint"></span>
           </div>
 
           <figure class="memory memory-one">
@@ -613,9 +613,9 @@
     const bouquetNameLabel = document.getElementById('bouquet-name');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const bouquetStyles = [
-      { id: 'rose', name: 'Hồng phấn', label: 'hoa hồng màu hồng phấn' },
-      { id: 'peony', name: 'Mẫu đơn tím', label: 'hoa mẫu đơn sắc tím' },
-      { id: 'hydrangea', name: 'Cẩm tú cầu xanh', label: 'hoa cẩm tú cầu màu xanh lam' }
+      { id: 'rose', name: '', label: 'hoa hồng màu hồng phấn' },
+      { id: 'peony', name: '', label: 'hoa mẫu đơn sắc tím' },
+      { id: 'hydrangea', name: '', label: 'hoa cẩm tú cầu màu xanh lam' }
     ];
     let bloomed = false;
     let settleTimer;
@@ -669,7 +669,7 @@
       const bouquet = bouquetStyles[bouquetIndex];
       flowerArt.dataset.style = bouquet.id;
       flowerArt.setAttribute('aria-label', `Bó ${bouquet.label} được gói trong giấy màu kem và ánh đồng`);
-      bouquetIndexLabel.textContent = `BÓ HOA ${String(bouquetIndex + 1).padStart(2, '0')} / 03`;
+      bouquetIndexLabel.textContent = ` `;
       bouquetNameLabel.textContent = bouquet.name;
       const incoming = flowerArt.querySelector(`.style-${bouquet.id}`);
       window.clearTimeout(bouquetEntryTimer);
